@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Neiborhood map Project</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link href=css/style.css rel=stylesheet>
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="col-md-8" class="navbar-header">
+
+            <a class="navbar-brand" href="#">Yoosuf MAPs</a>
+            <div class="col-lg-6 Search">
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search for...">
+                <span class="input-group-btn">
+                <button class="btn btn-default" type="button">Go!</button>
+              </span>
+              </div>
+              <!-- /input-group -->
+            </div>
+            <!-- /.col-lg-6 -->
+          </div>
+          <!-- /.row -->
+        </div>
+    </div>
+    <!-- /.container-fluid -->
+    </nav>
+      <div class="row">
+    <div class="col-md-12">
+      <input id="show-listings" type="button" value="Show Listings">
+      <input id="hide-listings" type="button" value="Hide Listings">
+    </div>    </div></div>
+
+    <div class="row">
+
+    <div class="col-md-12"id="map">
+
+      <script  type="text/javascript" src="js/map.js"></script>
+
+      <script  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7eOS58jGUhKuBJ3SotYeC6NfzNiRyM_I&callback=initMap">
+      </script>
+    </div>
+  </div>
+  </div>
+  <script src="js/lib/knockout-3.2.0.js"></script>
+</body>
+
+</html>
