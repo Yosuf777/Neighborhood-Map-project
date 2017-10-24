@@ -3,9 +3,7 @@ var markers = [];
 var map;
 var CLIENT_ID;
 var CLIENT_SECRET;
-function startmap() {
-	ko.applyBindings(new initMap());
-}
+
 function initMap() {
   // Create a styles array to use with the map.
   var styles = [{
@@ -292,4 +290,7 @@ var Location = function(data) {
   }
 function errorHandling() {
 	alert("Error in Louding the map reconnect the internet");
+}
+	function startmap() {
+	ko.applyBindings(new initMap());
 }
