@@ -63,8 +63,7 @@ var Location = function(data) {
 		self.street = results.location.formattedAddress[0];
      	self.city = results.location.formattedAddress[1];
       	self.phone = results.contact.phone;
-	}).fail(function() {
-		alert("There was an error with the Foursquare API call. Please refresh the page and try again to load Foursquare data.");
+	}
 	});
 	
 	this.contentString = '<div class="info-window-content"><div class="title"><b>' + data.name + "</b></div>" +
@@ -207,8 +206,8 @@ var self = this;
     styles: styles,
     mapTypeControl: false
   });
-	clientID = "V443OTCAQPJLCRY4QWBFYN3ZK5FDKGJOYDHLMI3O342IRVNN";
-	clientSecret = "AK1JHLEG2D2KW14WF5HYVFNTUYFTBXYS4LDUUNRAHPR5URLB";
+	clientID = "SIAUYXUJLUUIQ5VPJJ0FGE1FTPOY1KZSXYQD4OY5D2LVR5M4";
+	clientSecret = "ZS4TA0NYAD2NKUWAMH3GC4BFQ1XRMAQV5N04ZIRNRBCSXLT0";
 
 	locations.forEach(function(locationItem){
 		self.locationList.push( new Location(locationItem));
