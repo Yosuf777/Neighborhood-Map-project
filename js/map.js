@@ -4,8 +4,9 @@ var map;
 var CLIENT_ID;
 var CLIENT_SECRET;
 
-function initMap() {
-  // Create a styles array to use with the map.
+function AppViewModel() {
+
+	// Create a styles array to use with the map.
   var styles = [{
     featureType: 'water',
     stylers: [{
@@ -288,9 +289,6 @@ var Location = function(data) {
           new google.maps.Size(21,34));
         return markerImage;
   }
-function errorHandling() {
-	alert("Error in Louding the map reconnect the internet");
-}
-	function startmap() {
-	ko.applyBindings(new initMap());
+function startApp() {
+	ko.applyBindings(new AppViewModel());
 }
