@@ -210,7 +210,7 @@ var self = this;
 	clientID = "V443OTCAQPJLCRY4QWBFYN3ZK5FDKGJOYDHLMI3O342IRVNN";
 	clientSecret = "AK1JHLEG2D2KW14WF5HYVFNTUYFTBXYS4LDUUNRAHPR5URLB";
 
-	initialLocations.forEach(function(locationItem){
+	locations.forEach(function(locationItem){
 		self.locationList.push( new Location(locationItem));
 	});
 
