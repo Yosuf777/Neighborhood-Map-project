@@ -208,3 +208,7 @@ function initMap() {
 function errorHandling() {
 	alert("Error in Louding the map reconnect the internet");
 }
+
+function startApp() {
+	ko.applyBindings(new AppViewModel());
+}
