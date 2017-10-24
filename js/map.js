@@ -242,6 +242,13 @@ var Location = function(data) {
 			});
 		}
 	}, self);
+	
+function startApp() {
+	ko.applyBindings(new AppViewModel());
+}
+	function errorHandling() {
+	alert("Google Maps has failed to load. Please check your internet connection and try again.");
+}
         document.getElementById('show-listings').addEventListener('click', showListings);
         document.getElementById('hide-listings').addEventListener('click', hideListings);
       };
@@ -289,6 +296,3 @@ var Location = function(data) {
           new google.maps.Size(21,34));
         return markerImage;
   }
-function startApp() {
-	ko.applyBindings(new AppViewModel());
-}
