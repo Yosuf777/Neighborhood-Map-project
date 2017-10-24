@@ -223,3 +223,6 @@ function initMap() {
           new google.maps.Size(21,34));
         return markerImage;
   }
+function errorHandling() {
+	alert("Error in Louding the map reconnect the internet");
+}
