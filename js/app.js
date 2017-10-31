@@ -1,6 +1,3 @@
-var markers = [];
-
-var map;
 function initMap() {
         // Create a map object and specify the DOM element for display.
         var map = new google.maps.Map(document.getElementById('map'), {
@@ -13,7 +10,24 @@ function initMap() {
 function errorHandling() {
 	alert("Error in Louding the map reconnect the internet");
 }
-
-function startApp() {
-	ko.applyBindings(new AppViewModel());
+function AppViewModel() {
+    this.MALL = "MALL";
+    this.PARK = "PARK";
+	this.RESTERENT = "RESTERENT";
+	this.RIVER = "RIVER";
+	this.LIBERARY = "LIBERARY";
 }
+
+// Activates knockout.js
+ko.applyBindings(new AppViewModel());
+
+ko.applyBindings({
+        locations: [
+            { MALL: 'MALL'},
+		{ PARK: 'PARK'},
+		  { RESTERENT: 'RESTERENT'},
+		  { RIVER: 'MALL'},
+		{ LIBERARY: 'LIBERARY'}
+		
+        ]
+    });
