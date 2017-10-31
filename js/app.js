@@ -19,7 +19,7 @@ function AppViewModel() {
 }
 
 // Activates knockout.js
-ko.applyBindings(new AppViewModel());
+//ko.applyBindings(new AppViewModel());
 
 ko.applyBindings({
         locations: [
@@ -30,4 +30,4 @@ ko.applyBindings({
 		{ LIBERARY: 'LIBERARY'}
 		
         ]
-    });
+ });
