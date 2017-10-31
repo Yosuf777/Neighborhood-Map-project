@@ -9,48 +9,12 @@ function initMap() {
         });
       }
 
-  var marker = new google.maps.Marker({
+  
+var marker = new google.maps.Marker({
     position: tribeca,
     map: map,
     title: 'First Marker!'
   });
-
-  var locations = [{
-      title: 'اسواق السلطان',
-      location: {
-        lat: 24.748644,
-        lng: 46.536133
-      }
-    },
-    {
-      title: 'حديقة الدرعية',
-      location: {
-        lat: 24.751547,
-        lng: 46.534889
-      }
-    },
-    {
-      title: 'مطعم بخاري',
-      location: {
-        lat: 24.750339,
-        lng: 46.538258
-      }
-    },
-    {
-      title: 'سد الدرعية',
-      location: {
-        lat: 24.747981,
-        lng: 46.544502
-      }
-    },
-    {
-      title: 'مكتبة الدرعية',
-      location: {
-        lat: 24.754704,
-        lng: 46.546347
-      }
-    },
-  ];
 
         var largeInfowindow = new google.maps.InfoWindow();
 
