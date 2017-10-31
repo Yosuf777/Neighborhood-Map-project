@@ -21,9 +21,15 @@
             <a class="navbar-brand" href="#">Yoosuf MAPs</a>
             <div class="col-lg-6 Search">
               <div class="input-group">
-                <input type="text" class="search-box" placeholder="Search for..." id="search-box" data-bind="textInput: searchterm, valueUpdate: 'afterkeydown'">
-                <span class="input-group-btn">
-                <button class="btn btn-default" type="button">Go!</button>
+            
+     <input type="text" class="form-control" placeholder="Search for...">
+      <li ><a href="#mall">MALL</a></li>
+      <li ><a href="#park">PARK</a></li>
+      <li ><a href="#resterent">RESTERENT</a></li>
+      <li ><a href="#river">RIVER</a></li>
+      <li ><a href="#liberary">LIBERARY</a></li>
+
+    </ul>
               </span>
               </div>
               <!-- /input-group -->
@@ -35,20 +41,13 @@
     </div>
     <!-- /.container-fluid -->
     </nav>
-      <div class="row">
-    <div class="col-md-12">
-      <input id="show-listings" type="button" value="Show Listings">
-      <input id="hide-listings" type="button" value="Hide Listings">
-    </div>    </div></div>
-
-    <div class="row">
-
+    
     <div class="col-md-12"id="map">
 	    
  <script src="js/jQuery-3.2.1.js"></script>
       <script src="js/Knockout-3.4.2.js"></script>
       <script  type="text/javascript" src="js/app.js"></script>
-      <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7eOS58jGUhKuBJ3SotYeC6NfzNiRyM_I&callback=startApp&libraries=places" onerror="errorHandling()"></script>
+	    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFtS-HYNt8rk1OjbV4UYAqQRS6uEgSfB8&callback=initMap" async defer></script>
 
       </script>
     </div>
