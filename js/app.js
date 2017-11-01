@@ -50,14 +50,14 @@ function favLocations(name) {
 // Overall viewmodel for this screen, along with initial state
 function ViewModel() {
     var self = this;
-      
+
     // Editable data
-    self.seats = ko.observableArray([
+    self.locations = ko.observableArray([
         new favLocations("mall"),
         new favLocations("park"),
         new favLocations("resturant"),
      new favLocations("river"),
-        new favLocations("library")    
+        new favLocations("library")
     ]);
 }
 
