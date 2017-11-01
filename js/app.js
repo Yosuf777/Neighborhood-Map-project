@@ -42,4 +42,23 @@ var favlocations = [{
     },
   ];
 
+function favLocations(name) {
+    var self = this;
+    self.name = name;
+}
 
+// Overall viewmodel for this screen, along with initial state
+function ViewModel() {
+    var self = this;
+      
+    // Editable data
+    self.seats = ko.observableArray([
+        new favLocations("mall"),
+        new favLocations("park"),
+        new favLocations("resturant"),
+     new favLocations("river"),
+        new favLocations("library")    
+    ]);
+}
+
+ko.applyBindings(new ViewModel());
