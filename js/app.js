@@ -7,9 +7,8 @@ function initMap() {
 
 
 
-var tribeca = new Array();
-
-tribeca =[
+var fav = new Array();
+fav =[
 {lat: 24.748644,  lng: 46.536133},
 {lat: 24.751547,  lng: 46.534889},
 {lat: 24.750339,  lng: 46.538258},
@@ -18,9 +17,9 @@ tribeca =[
 {lat: 24.748644,  lng: 46.536133}
 ];
 
-for(var i=1; i<tribeca.length; i++){
+for(var i=1; i<fav.length; i++){
         var marker = new google.maps.Marker({
-          position: tribeca[i] ,
+          position: fav[i] ,
           map: map,
           title: "PLACE NO: "+ i
         });
@@ -30,7 +29,7 @@ for(var i=1; i<tribeca.length; i++){
  
 }
 
-// Overall viewmodel for this screen, along with initial state
+
 function ViewModel() {
     var self = this;
 
@@ -39,13 +38,13 @@ function ViewModel() {
 self.filterText = ko.observable(""); // Text from search field
  
 
-    // Editable data
+     // locations data
 self.locations = ko.observableArray([
-        { name: "park"},
-        { name: "Resturan"},
-        { name: "River"},
-        { name: "Library"},
-        { name: "mall"}
+        { name: "park", lat: 24.748644,  lng: 46.536133},
+        { name: "Resturan", lat: 24.751547,  lng: 46.534889},
+        { name: "River", lat: 24.750339,  lng: 46.538258},
+        { name: "Library",lat: 24.747981,  lng: 46.544502},
+        { name: "mall" ,lat:24.748644,  lng: 46.536133}
     ]);
     self.filteredlocations = ko.computed(function () {
 
@@ -62,6 +61,7 @@ var filteredlocations = ko.utils.arrayFilter(self.locations(), function(test) {
     }, self);
     
 }
+
 
 $(document).ready( function(){
     var vm = new ViewModel();
