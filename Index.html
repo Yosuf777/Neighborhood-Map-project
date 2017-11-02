@@ -13,14 +13,16 @@
 </head>
 
 <body>
-<input type="text" class="form-control" placeholder="Search for Locations" data-bind="value: filterText, valueUpdate: 'afterkeydown'" />
+
     
-   
+       <input type="text"class="form-control" placeholder="Search for Locations"  data-bind="value: filterText, valueUpdate: 'afterkeydown'" />
 
 
-  <ul data-bind="foreach: locations">
 
-    <li data-bind="text: name"></li>
+
+  <ul data-bind="foreach: filteredlocations">
+
+    <li  data-bind="text: name"></li>
 
   </ul>
 
