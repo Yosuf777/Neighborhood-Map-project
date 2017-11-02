@@ -13,21 +13,25 @@
 </head>
 
 <body>
+<input type="text" class="form-control" placeholder="Search for Locations" data-bind="value: filterText, valueUpdate: 'afterkeydown'" />
+    
+   
 
-  <input type="text" class="form-control" placeholder="Search for...">
+
   <ul data-bind="foreach: locations">
 
     <li data-bind="text: name"></li>
 
   </ul>
 
+  
 
   <div  id="map">
 
     <script src="js/jQuery-3.2.1.js"></script>
     <script src="js/knockout-3.3.0.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFtS-HYNt8rk1OjbV4UYAqQRS6uEgSfB8&callback=initMap" async defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYnRYxn8S-E6TxCrXR5FYa7STPjWCwkLg&callback=initMap" async defer></script>
 
     </script>
   </div>
