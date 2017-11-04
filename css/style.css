@@ -24,11 +24,7 @@ h1 {
     margin: 0 0 10px 0;
     text-align: center;
 }
-#hide-listings,
-#show-listings {
-    width: 10%;
-    margin: .3%;
-}
+
 hr {
     background: #D0D7D9;
     height: 1px;
