@@ -1,27 +1,27 @@
 var vm;
 
 var locations = [{
-    name: "معرض الحصان للسيارات1 ",
+    name: "معرض الحصان للسيارات",
     lat: 24.748644,
     lng: 46.536133
   },
   {
-    name: "استراحة تالا2",
+    name: "استراحة تالا",
     lat: 24.751547,
     lng: 46.534889
   },
   {
-    name: "3استراحة الدرعية الخضراء",
+    name: "استراحة الدرعية الخضراء",
     lat: 24.745738,
     lng: 46.525868
   },
   {
-    name: "4Al Jawhara - Football Field",
+    name: "Al Jawhara - Football Field",
     lat: 24.747981,
     lng: 46.544502
   },
   {
-    name: "الدرعية5",
+    name: "الدرعية",
     lat: 24.747579,
     lng: 46.525048
   }
@@ -50,21 +50,21 @@ function initMap() {
     });
 
     vm.locations()[i].marker = marker;
-    marker.addListener('click', callback);
+    marker.addListener('click', callback)
 
     //  var infoWindow;
   }
 
   function callback() {
     var marker = this;
-    console.log(marker);
-    getFSData(marker, infoWindow); // pass marker and infoWindow as arguments
+    console.log(marker)
+    getFSData(marker, infoWindow) // pass marker and infoWindow as arguments
 
     marker.setAnimation(google.maps.Animation.BOUNCE);
 
     setTimeout(function() {
       marker.setAnimation(null);
-    }, 2000);
+    }, 1400)
   }
 
 }
@@ -82,21 +82,17 @@ function getFSData(marker, infoWindow) {
 
       //Map info windows to each Location in the markers array
 
-      console.log(data);
+      console.log(data)
 
-      var name = data.response.venues[0].name;
+      var name = data.response.venues[0].name
 
-      var address = data.response.venues[0].location.formattedAddress;
+      var address = data.response.venues[0].location.formattedAddress
 
-      // marker.addListener('click', function() {
-      //   infowindow.marker = marker;
-      infoWindow.setContent('<div class="info-window">' + '<h4>' + name + '</h4>' + '<p>' + address + '</p><p>' + marker.position + '</p></div>');
+var referralId = data.response.venues[0].referralId
+var id = data.response.venues[0].id
+
+      infoWindow.setContent('<div class="info-window">' + '<h4>' + name + '</h4>' + '<p>' + address + '</p><p>' + referralId + '</p><p>' + marker.position + '</p><p>' + id + '</p></div>');
       infoWindow.open(map, marker);
-
-      //    infowindow.addListener('closeclick', function() {
-      //      infowindow.marker = null;
-      //    });
-      //   });
 
 
     },
@@ -135,7 +131,7 @@ function ViewModel() {
       if (test.marker) test.marker.setVisible(match); // true or false
 
       return match;
-    });
+    })
 
     return filteredlocations;
 
@@ -149,6 +145,11 @@ function ViewModel() {
 
 }
 
-
+/**
+ * Error callback for GMap API request
+ */
+mapError = () => {
+  // Error handling
+};
 vm = new ViewModel();
 ko.applyBindings(vm);
