@@ -3,27 +3,27 @@
 var vm;
 
 var locations = [{
-    name: "معرض الحصان للسيارات",
+    name: "1- معرض الحصان للسيارات",
     lat: 24.748644,
     lng: 46.536133
   },
   {
-    name: "استراحة تالا",
+    name: "2- استراحة تالا",
     lat: 24.751547,
     lng: 46.534889
   },
   {
-    name: "استراحة الدرعية الخضراء",
+    name: "3- استراحة الدرعية الخضراء",
     lat: 24.745738,
     lng: 46.525868
   },
   {
-    name: "Al Jawhara - Football Field",
+    name: "4- Al Jawhara - Football Field",
     lat: 24.747981,
     lng: 46.544502
   },
   {
-    name: "الدرعية",
+    name: "5- الدرعية",
     lat: 24.747579,
     lng: 46.525048
   }
@@ -90,8 +90,8 @@ function getFSData(marker, infoWindow) {
 
       var address = data.response.venues[0].location.formattedAddress;
 
-var referralId = data.response.venues[0].referralId;
-var id = data.response.venues[0].id;
+      var referralId = data.response.venues[0].referralId;
+      var id = data.response.venues[0].id;
 
       infoWindow.setContent('<div class="info-window">' + '<h4>' + name + '</h4>' + '<p>' + address + '</p><p>' + referralId + '</p><p>' + marker.position + '</p><p>' + id + '</p></div>');
       infoWindow.open(map, marker);
@@ -152,6 +152,7 @@ function ViewModel() {
  */
 mapError = () => {
   // Error handling
+  console.log("Error handling");
 };
 
 vm = new ViewModel();
