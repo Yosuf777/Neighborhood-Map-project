@@ -1,3 +1,5 @@
+/*jshint esversion: 6 */
+
 var vm;
 
 var locations = [{
@@ -50,21 +52,21 @@ function initMap() {
     });
 
     vm.locations()[i].marker = marker;
-    marker.addListener('click', callback)
+    marker.addListener('click', callback);
 
     //  var infoWindow;
   }
 
   function callback() {
     var marker = this;
-    console.log(marker)
-    getFSData(marker, infoWindow) // pass marker and infoWindow as arguments
+    console.log(marker);
+    getFSData(marker, infoWindow); // pass marker and infoWindow as arguments
 
     marker.setAnimation(google.maps.Animation.BOUNCE);
 
     setTimeout(function() {
       marker.setAnimation(null);
-    }, 1400)
+    }, 1400);
   }
 
 }
@@ -82,14 +84,14 @@ function getFSData(marker, infoWindow) {
 
       //Map info windows to each Location in the markers array
 
-      console.log(data)
+      console.log(data);
 
-      var name = data.response.venues[0].name
+      var name = data.response.venues[0].name;
 
-      var address = data.response.venues[0].location.formattedAddress
+      var address = data.response.venues[0].location.formattedAddress;
 
-var referralId = data.response.venues[0].referralId
-var id = data.response.venues[0].id
+var referralId = data.response.venues[0].referralId;
+var id = data.response.venues[0].id;
 
       infoWindow.setContent('<div class="info-window">' + '<h4>' + name + '</h4>' + '<p>' + address + '</p><p>' + referralId + '</p><p>' + marker.position + '</p><p>' + id + '</p></div>');
       infoWindow.open(map, marker);
@@ -131,7 +133,7 @@ function ViewModel() {
       if (test.marker) test.marker.setVisible(match); // true or false
 
       return match;
-    })
+    });
 
     return filteredlocations;
 
@@ -151,5 +153,6 @@ function ViewModel() {
 mapError = () => {
   // Error handling
 };
+
 vm = new ViewModel();
 ko.applyBindings(vm);
