@@ -1,27 +1,27 @@
 var vm;
 
 var locations = [{
-    name: "park",
+    name: "معرض الحصان للسيارات",
     lat: 24.748644,
     lng: 46.536133
   },
   {
-    name: "Resturan",
+    name: "استراحة تالا",
     lat: 24.751547,
     lng: 46.534889
   },
   {
-    name: "River",
-    lat: 24.750339,
-    lng: 46.538258
+    name: "استراحة الدرعية الخضراء",
+    lat: 24.745738,
+    lng: 46.525868
   },
   {
-    name: "Library",
+    name: "Al Jawhara - Football Field",
     lat: 24.747981,
     lng: 46.544502
   },
   {
-    name: "World Cup Stadium",
+    name: "الدرعية",
     lat: 24.747579,
     lng: 46.525048
   }
@@ -52,7 +52,7 @@ function initMap() {
     vm.locations()[i].marker = marker;
     marker.addListener('click', callback)
 
-  //  var infoWindow;
+    //  var infoWindow;
   }
 
   function callback() {
@@ -70,10 +70,10 @@ function initMap() {
 }
 
 function getFSData(marker, infoWindow) {
-    var ll = marker.position.lat() + ',' + marker.position.lng();
+  var ll = marker.position.lat() + ',' + marker.position.lng();
 
   /*Foursquare api ajax request*/
-          $.ajax({
+  $.ajax({
     type: "GET",
     dataType: 'json',
     cache: false,
@@ -88,15 +88,15 @@ function getFSData(marker, infoWindow) {
 
       var address = data.response.venues[0].location.formattedAddress
 
-     // marker.addListener('click', function() {
-       //   infowindow.marker = marker;
-         infoWindow.setContent('<div class="info-window">' + '<h4>' + name + '</h4>'  + '<p>' + address + '</p><p>' + marker.position + '</p></div>');
-         infoWindow.open(map, marker);
+      // marker.addListener('click', function() {
+      //   infowindow.marker = marker;
+      infoWindow.setContent('<div class="info-window">' + '<h4>' + name + '</h4>' + '<p>' + address + '</p><p>' + marker.position + '</p></div>');
+      infoWindow.open(map, marker);
 
-     //    infowindow.addListener('closeclick', function() {
-     //      infowindow.marker = null;
-     //    });
-     //   });
+      //    infowindow.addListener('closeclick', function() {
+      //      infowindow.marker = null;
+      //    });
+      //   });
 
 
     },
