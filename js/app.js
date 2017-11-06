@@ -21,9 +21,9 @@ var locations = [{
     lng: 46.544502
   },
   {
-    name: "mall",
-    lat: 24.748644,
-    lng: 46.536133
+    name: "World Cup Stadium",
+    lat: 24.747579,
+    lng: 46.525048
   }
 ];
 
@@ -37,6 +37,7 @@ function initMap() {
     zoom: 14,
   });
 
+  var infoWindow = new google.maps.InfoWindow();
 
   for (var i = 0; i < locations.length; i++) {
     var marker = new google.maps.Marker({
@@ -51,48 +52,51 @@ function initMap() {
     vm.locations()[i].marker = marker;
     marker.addListener('click', callback)
 
-    var infoWindow;
+  //  var infoWindow;
   }
 
   function callback() {
     var marker = this;
     console.log(marker)
+    getFSData(marker, infoWindow) // pass marker and infoWindow as arguments
 
+    marker.setAnimation(google.maps.Animation.BOUNCE);
+
+    setTimeout(function() {
+      marker.setAnimation(null);
+    }, 2000)
   }
-
-  getFSData(marker, infoWindow) // pass marker and infoWindow as arguments
 
 }
 
 function getFSData(marker, infoWindow) {
-
+    var ll = marker.position.lat() + ',' + marker.position.lng();
 
   /*Foursquare api ajax request*/
           $.ajax({
     type: "GET",
     dataType: 'json',
     cache: false,
-    url: 'https://api.foursquare.com/v2/venues/search?ll=40.7,-74&client_id=SIAUYXUJLUUIQ5VPJJ0FGE1FTPOY1KZSXYQD4OY5D2LVR5M4&client_secret=ZS4TA0NYAD2NKUWAMH3GC4BFQ1XRMAQV5N04ZIRNRBCSXLT0&v=20170101',
-    async: true,
+    url: 'https://api.foursquare.com/v2/venues/search?ll=' + ll + '&client_id=SIAUYXUJLUUIQ5VPJJ0FGE1FTPOY1KZSXYQD4OY5D2LVR5M4&client_secret=ZS4TA0NYAD2NKUWAMH3GC4BFQ1XRMAQV5N04ZIRNRBCSXLT0&v=20170101',
     success: function(data) {
 
       //Map info windows to each Location in the markers array
-      var infowindow = new google.maps.InfoWindow({
-      content: location.name,
-      lat: locations.lat,
-      lng: locations.lng
 
-    });
+      console.log(data)
 
-      marker.addListener('click', function() {
-          infowindow.marker = marker;
-         infowindow.setContent('<div>' + '<h4>' + marker.title + '</h4>'  +  marker.position + '</div>');
-         infowindow.open(map, marker);
+      var name = data.response.venues[0].name
 
-         infowindow.addListener('closeclick', function() {
-           infowindow.marker = null;
-         });
-        });
+      var address = data.response.venues[0].location.formattedAddress
+
+     // marker.addListener('click', function() {
+       //   infowindow.marker = marker;
+         infoWindow.setContent('<div class="info-window">' + '<h4>' + name + '</h4>'  + '<p>' + address + '</p><p>' + marker.position + '</p></div>');
+         infoWindow.open(map, marker);
+
+     //    infowindow.addListener('closeclick', function() {
+     //      infowindow.marker = null;
+     //    });
+     //   });
 
 
     },
@@ -140,7 +144,7 @@ function ViewModel() {
 
   self.selectedMarkers = function(currentItem) {
     console.log(currentItem);
-
+    google.maps.event.trigger(currentItem.marker, 'click');
   };
 
 }
