@@ -50,21 +50,21 @@ function initMap() {
     });
 
     vm.locations()[i].marker = marker;
-    marker.addListener('click', callback)
+    marker.addListener('click', callback);
 
     //  var infoWindow;
   }
 
   function callback() {
     var marker = this;
-    console.log(marker)
-    getFSData(marker, infoWindow) // pass marker and infoWindow as arguments
+    console.log(marker);
+    getFSData(marker, infoWindow); // pass marker and infoWindow as arguments
 
     marker.setAnimation(google.maps.Animation.BOUNCE);
 
     setTimeout(function() {
       marker.setAnimation(null);
-    }, 2000)
+    }, 2000);
   }
 
 }
@@ -82,11 +82,11 @@ function getFSData(marker, infoWindow) {
 
       //Map info windows to each Location in the markers array
 
-      console.log(data)
+      console.log(data);
 
-      var name = data.response.venues[0].name
+      var name = data.response.venues[0].name;
 
-      var address = data.response.venues[0].location.formattedAddress
+      var address = data.response.venues[0].location.formattedAddress;
 
       // marker.addListener('click', function() {
       //   infowindow.marker = marker;
@@ -135,7 +135,7 @@ function ViewModel() {
       if (test.marker) test.marker.setVisible(match); // true or false
 
       return match;
-    })
+    });
 
     return filteredlocations;
 
