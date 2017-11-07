@@ -152,6 +152,7 @@ function ViewModel() {
  */
 mapError = () => {
   // Error handling
+    window.alert("Error callback for GMap API request");
 };
 
 vm = new ViewModel();
