@@ -150,9 +150,9 @@ function ViewModel() {
 /**
  * Error callback for GMap API request
  */
-mapError = () => {
-  // Error handling
-    alert("map not loud");
+function mapError () {
+ // Error handling
+ alert("oogle Maps has failed to load. Please check your internet connection or try again later.");
 };
 
 vm = new ViewModel();
