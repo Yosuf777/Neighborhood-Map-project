@@ -150,13 +150,9 @@ function ViewModel() {
 /**
  * Error callback for GMap API request
  */
-function mapError () {
- // Error handling
-     initMap(false);
- alert("oogle Maps has failed to load. Please check your internet connection or try again later.");
+mapError = () => {
+  // Error handling
 };
-function googleSuccess() {
-  initMap(true);
-}
+
 vm = new ViewModel();
 ko.applyBindings(vm);
