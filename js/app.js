@@ -152,8 +152,11 @@ function ViewModel() {
  */
 function mapError () {
  // Error handling
+     initMap(false);
  alert("oogle Maps has failed to load. Please check your internet connection or try again later.");
 };
-
+function googleSuccess() {
+  initMap(true);
+}
 vm = new ViewModel();
 ko.applyBindings(vm);
