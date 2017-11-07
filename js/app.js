@@ -152,6 +152,7 @@ function ViewModel() {
  */
 mapError = () => {
   // Error handling
+    alert("map not loud");
 };
 
 vm = new ViewModel();
