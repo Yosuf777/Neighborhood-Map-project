@@ -152,7 +152,6 @@ function ViewModel() {
  */
 mapError = () => {
   // Error handling
-  console.log("Error handling");
 };
 
 vm = new ViewModel();
